@@ -1,0 +1,11 @@
+<input [formControl]="searchControl" />
+
+@if (result.loaded) {
+  @for (post of result.posts; track $index) {
+    <p>{{ post.title }}</p>
+  } @empty {
+    <p><i>Pas de résultats</i></p>
+  }
+} @else {
+  <p><i>Chargement...</i></p>
+}
